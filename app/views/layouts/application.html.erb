@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div id="top" class="container">
+        <h1 id="logo"><img src="logo3.png"></h1>
+        <ul class="topul">
+          <% if user_signed_in? %>
+          <li><%= link_to "로그아웃" , destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><a href='/users/sign_in'>LOGIN</li>
+          <% end %>
+          <li><a href='/users/sign_up'>회원가입</li>
+        </ul>
+    </div>
+    
+<nav id="topMenu" a href=#>
+<ul class="menu">
+  <li><a href="/">HOME</a></li>
+  <li><a href="/about/show">ABOUT</a></li>
+  <li><a href="/restaurants">ALL</a></li>
+</ul>
+</nav>
+    <%= yield %>
+</div>
+</body>
+</html>
+

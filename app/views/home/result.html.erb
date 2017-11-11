@@ -1,0 +1,21 @@
+<h1>추천 식당</h1>
+
+<div class="row">
+    
+<% if @results.blank? %>
+    <p>조건에 맞는 식당이없습니다..ㅠ</p>
+<% else %>
+    <% @results.each do |r| %>
+        <%= link_to r do %>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img class="photo" src="<%= r.image %>">
+                </div>
+                <div class="caption">
+                    <h3><%= r.name %></h3>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>
+</div>

@@ -1,0 +1,55 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.reservation{
+    display: flex;
+    justify-content:center;
+    margin-bottom:30px;
+}
+    .img{
+    width: 70%; 
+    height: auto;
+ 
+    margin:20px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    }
+
+.max_visitor{
+    margin-right:10px;
+    margin-left:10px;
+
+}
+
+.category{
+ margin-right:10px;
+margin-left:10px;
+
+}
+
+
+.address{
+ margin-right:10px;
+ margin-left:20px;
+
+}
+
+
+ul{
+   list-style:none;
+   }
+ 
+.button{
+    margin-left:20px;
+    background:#FFBB00;
+    width:100px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: nonse;
+    display: inline-block;
+    font-size: 13px;
+    
+}

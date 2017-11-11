@@ -1,0 +1,30 @@
+<div>
+  <ul>
+    <li><%= @restaurant.name  %></li>
+    <li><%= @restaurant.phone_number  %></li>
+    <li><%= @restaurant.address  %></li>
+    <li><%= @restaurant.image %></li>
+  </ul>
+</div>
+
+<ul>
+  <% @restaurant.comments.each do |comment| %>
+  <li>
+    <b><%= comment.user.email %></b> : <%= comment.content %>
+    <% if current_user == comment.user %>
+    - <%= link_to "Delete", [@restaurant, comment], method: :delete %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<% if user_signed_in? %>
+<div>
+  <%= form_for([@restaurant, @comment]) do |f| %>
+    <!--<input type="file" name="image"><br>-->
+    Comment: <%= f.text_field :content %>
+    <!--<input type="text" name="content"><br>-->
+    <%= f.submit "Save" %>
+  <% end %>
+</div>  
+<% end %>

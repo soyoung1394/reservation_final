@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "restaurants.scss" %>
+
+<div class="row">
+    <% @restaurants.each do |r| %>
+    <%= link_to r do %>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img class="photo" src="<%= r.image %>">
+            </div>
+            <div class="caption">
+                <h3><%= r.name %></h3>
+            </div>
+        </div>
+    <% end %>
+<% end %>
+</div>
+
+<%= paginate @restaurants %>

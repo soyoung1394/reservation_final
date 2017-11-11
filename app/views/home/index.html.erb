@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "home.scss" %>
+<div class="container">
+<img src="home.jpg" class="img"></img>
+
+<form action="result">
+<div id="reservation">
+  <ul class="reservation">
+    <li class='max_visitor'>
+      <label>인원수</label>
+      <select name="max_visitor">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+      </select>
+    </li>
+    <li class='category'>
+       <label>종류</label>
+      <select name="category">
+        <option value="한식">한식</option>
+        <option value="중식">중식</option>
+        <option value="일식">일식</option>
+        <option value="경양식">경양식</option>
+        </select>
+        </li>
+    <li class='location'>
+       <label>위치</label>
+      <select name="location">
+        <%= @list.each do |e| %>
+          <option value=<%= e %>><%= e %></option>
+        <% end %>
+        </select>
+    </li>
+    <input type="submit" value="식당찾기" class="button">
+  </ul>
+</div>
+</form>
+
+</div>
